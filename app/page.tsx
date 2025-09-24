@@ -75,11 +75,36 @@ export default function Home() {
         traits: nftInfo.traits,
         predictions: ensemble.predictions,
         modelComparison: [
-          { model: 'XGBoost', ...xgboost },
-          { model: 'LSTM', ...lstm },
-          { model: 'Random Forest', ...randomForest },
-          { model: 'ARIMA', ...arima },
-          { model: 'Ensemble', ...ensemble }
+          { 
+            model: 'XGBoost',
+            accuracy: xgboost.accuracy,
+            mse: xgboost.mse,
+            predictions: xgboost.predictions
+          },
+          {
+            model: 'LSTM',
+            accuracy: lstm.accuracy,
+            mse: lstm.mse,
+            predictions: lstm.predictions
+          },
+          {
+            model: 'Random Forest',
+            accuracy: randomForest.accuracy,
+            mse: randomForest.mse,
+            predictions: randomForest.predictions
+          },
+          {
+            model: 'ARIMA',
+            accuracy: arima.accuracy,
+            mse: arima.mse,
+            predictions: arima.predictions
+          },
+          {
+            model: 'Ensemble',
+            accuracy: ensemble.accuracy,
+            mse: ensemble.mse,
+            predictions: ensemble.predictions
+          }
         ],
         historicalData: historicalData
       };
